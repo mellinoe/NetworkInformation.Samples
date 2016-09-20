@@ -8,7 +8,7 @@
   <PropertyGroup>
     <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
     <OutputType>Exe</OutputType>
-    <AssemblyName>SampleExe</AssemblyName>
+    <AssemblyName>NetworkInformation.Samples</AssemblyName>
     <RootNamespace>$(AssemblyName)</RootNamespace>
     <NuGetTargetMoniker>.NETCoreApp,Version=v1.0</NuGetTargetMoniker>
   </PropertyGroup>
@@ -23,6 +23,9 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'OSX_Release|x64' " />
   <ItemGroup>
     <None Include="project.json" />
+    <Reference Include="$(ProjectDir)/deps/System.Net.NetworkInformation.dll">
+      <Private>true</Private>
+    </Reference>
   </ItemGroup>
   <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), dir.targets))\dir.targets" />
 </Project>
